@@ -1,3 +1,8 @@
+html,
+body {
+  width: 100vw;
+}
+
 .App {
   text-align: center;
   font-family: Arial, sans-serif;
@@ -9,12 +14,17 @@
 
 .input-container {
   display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 input {
   margin: 10px;
   padding: 5px;
   font-size: 1em;
+  width: 80%; /* 모바일에서 전체 너비의 80% */
+  max-width: 400px; /* 최대 너비 설정 */
+  box-sizing: border-box;
 }
 
 button {
@@ -22,6 +32,9 @@ button {
   padding: 10px 20px;
   font-size: 1em;
   cursor: pointer;
+  width: 80%; /* 모바일에서 전체 너비의 80% */
+  max-width: 400px; /* 최대 너비 설정 */
+  box-sizing: border-box;
 }
 
 ul {
@@ -55,4 +68,26 @@ li:hover {
 h1,
 h2 {
   color: #333;
+}
+
+/* 모바일 최적화 */
+@media (max-width: 600px) {
+  .input-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  input,
+  button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  ul {
+    width: 100%;
+  }
+
+  li {
+    flex: 1 1 45%; /* 모바일에서 2열로 배치되도록 설정 */
+  }
 }
